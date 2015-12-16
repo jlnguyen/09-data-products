@@ -12,17 +12,46 @@ rm(list = ls())
 
 require(shiny)
 
-# Global variable assignment
-x <<- x + 1
-y <<- 0
+# # Global variable assignment
+# x <<- x + 1
+# y <<- 0
+# 
+# shinyServer(
+#     function(input, output) {
+#         y <<- y + 1
+#         output$text1 <- renderText({input$text1})
+#         output$text2 <- renderText({input$text2})
+#         output$text3 <- renderText({as.numeric(input$text1) + 1})
+#         output$text4 <- renderText(y)
+#         output$text5 <- renderText(x)
+#     }
+# )
 
+
+##########################
+## Reactive expressions ##
+##########################
 shinyServer(
     function(input, output) {
-        y <<- y + 1
-        output$text1 <- renderText({input$text1})
-        output$text2 <- renderText({input$text2})
-        output$text3 <- renderText({as.numeric(input$text1) + 1})
-        output$text4 <- renderText(y)
-        output$text5 <- renderText(x)
+        
+        # Create reactive variable 'x'
+        x <- reactive({as.numeric(input$text1) + 100})
+        
+        # Use reactive variable with syntax x()
+        output$text1 <- renderText({x()})
+        output$text2 <- renderText({x() + as.numeric(input$text2)})
     }
 )
+
+# # ... as opposed to:
+# shinyServer(
+#     function(input, output) {
+#         x <- reactive({as.numeric(input$text1) + 100})
+#         output$text1 <- renderText({as.numeric(input$text1) + 100})
+#         output$text2 <- renderText({as.numeric(input$text1) + 100 +
+#                 as.numeric(input$text2)})
+#     }
+# )
+
+
+
