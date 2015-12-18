@@ -80,9 +80,3 @@ shinyServer(
 # Why isn't it doing what we want?
 # ANSWER: The server.R output name isn't the same as the plotOutput command used in ui.R. ('newHist' vs 'myHist')
 
-
-
-
-
-
-
