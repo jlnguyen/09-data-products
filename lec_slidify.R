@@ -27,6 +27,6 @@ browseURL("index.html")
 
 ## Publishing to Github
 # publish_github("slidify-data-products", "jlnguyen")
-
+publish('first_deck', 'jlnguyen')
 
 
