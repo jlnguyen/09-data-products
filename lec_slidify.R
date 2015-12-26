@@ -29,4 +29,6 @@ browseURL("index.html")
 # publish_github("slidify-data-products", "jlnguyen")
 publish('first_deck', 'jlnguyen')
 
+## Publish to RPubs
+publish(title = "Coursera Data Products Pitch", "index.html", host = "rpubs")
 
