@@ -1,0 +1,10 @@
+Package: topten
+Type: Package
+Title: Building a Prediction Model from the Top 10 Features
+Version: 0.1
+Date: 2015-12-28
+Author: Joseph L. Nguyen
+Maintainer: Joseph L. Nguyen <joe.nguyen89@gmail.com>
+Description: Functions for building and predicting models from selecting the top 10 predictors in the dataset
+License: GPL-3
+LazyData: TRUE
